@@ -25,22 +25,11 @@ class PublishingService extends AbstractService
 
   /**
    *
-   * @param $eId
-   * @param $contactGroupId
-   * @param array $mailJobTags
+   * @param $body
    * @return mixed
    */
-    public function publishEmail($eId, $contactGroupId, $mailJobTags = array())
+    public function publishEmail($body = array())
     {
-      $body = array(
-        'contactGroupId' => $contactGroupId,
-        'newsletterId'	 => $eId,
-        'mailsPerHour'	 => 10000,
-        'mailJobTagIds' => array(
-          'mailJobTagId' => $mailJobTags
-        )
-      );
-
       return $this->invoke(__FUNCTION__,$body);
     }
 
