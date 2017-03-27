@@ -35,6 +35,16 @@ class PublishingService extends AbstractService
 
   /**
    *
+   * @param $body
+   * @return mixed
+   */
+    public function publishTestEmail($body = array())
+    {
+        return $this->invoke(__FUNCTION__,$body);
+    }
+
+  /**
+   *
    * @param $dmId
    * @param $contactGroupId
    * @param array $mailJobTags
